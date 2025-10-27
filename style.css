@@ -199,3 +199,15 @@ nav a:hover { text-decoration: underline; }
 .dark .float-nav a{ color:#69a7ff; }
 .dark .float-nav a.active{ background:#203553; border-color:#2c4670; color:#cfe2ff; }
 .dark .float-nav .fn-top{ background:#1f1f1f; border-color:#333; color:#eee; }
+/* 다크 모드 카드 색 통일(덮어쓰기) */
+.dark .card,
+.dark .grid-3.soft .card,   /* 소프트 그리드 카드 */
+.dark .card.link {           /* 링크 카드 */
+  background: #1e1e1e !important;
+  border-color: #444 !important;
+  color: #e8e8e8;
+}
+.dark .card h4 { color: #fff; }
+.dark .card p,
+.dark .card span,
+.dark .card li { color: #d5d5d5; }
