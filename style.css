@@ -85,3 +85,7 @@ nav a:hover { text-decoration: underline; }
   nav ul { display:none; width:100%; margin-top:10px; }
   nav[aria-expanded="true"] ul, nav ul.show { display:flex; }
 }
+
+.logo a { display:flex; align-items:center; gap:10px; text-decoration:none; color:inherit; }
+.logo img { height:28px; display:block; }
+@media (max-width:720px){ .logo img{ height:24px; } }
