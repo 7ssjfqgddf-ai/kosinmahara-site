@@ -162,3 +162,40 @@ nav a:hover { text-decoration: underline; }
 .dark .card h4 {
   color: #ffffff;
 }
+/* ✅ Floating Nav 업그레이드 */
+.float-nav{
+  position:fixed; right:18px; top:50%; transform:translateY(-50%);
+  display:flex; flex-direction:column; gap:6px; padding:12px;
+  width:180px; max-height:80vh; overflow:auto;
+  background:rgba(255,255,255,.9); backdrop-filter:saturate(180%) blur(10px);
+  border:1px solid #e5e5e5; border-radius:16px; box-shadow:0 10px 25px rgba(0,0,0,.12);
+  z-index:1000;
+}
+
+.float-nav .fn-title{
+  font-weight:700; font-size:.95rem; margin-bottom:4px;
+  padding:6px 8px; border-radius:10px; background:#f7f7f9; border:1px solid #eee;
+}
+
+.float-nav a{
+  display:block; padding:8px 10px; border-radius:10px; text-decoration:none;
+  color:#0b5bd3; font-size:.94rem;
+}
+
+.float-nav a.active{
+  background:#e8f0ff; font-weight:600; border:1px solid #d7e6ff;
+}
+
+.float-nav .fn-top{
+  margin-top:6px; padding:8px 0; border:1px solid #e5e5e5; border-radius:10px;
+  background:#fff; cursor:pointer; font-weight:700;
+}
+
+@media (max-width:960px){ .float-nav{ display:none; } }
+
+/* ✅ 다크 모드 대응 */
+.dark .float-nav{ background:rgba(26,26,26,.9); border-color:#333; }
+.dark .float-nav .fn-title{ background:#1f1f1f; border-color:#333; color:#eee; }
+.dark .float-nav a{ color:#69a7ff; }
+.dark .float-nav a.active{ background:#203553; border-color:#2c4670; color:#cfe2ff; }
+.dark .float-nav .fn-top{ background:#1f1f1f; border-color:#333; color:#eee; }

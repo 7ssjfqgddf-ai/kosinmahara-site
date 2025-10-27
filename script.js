@@ -72,3 +72,10 @@ if (searchInput) {
     });
   });
 }
+// ✅ 떠다니는 메뉴: 맨 위로 이동 버튼
+const toTopMini = document.getElementById('toTopMini');
+if (toTopMini) {
+  toTopMini.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
