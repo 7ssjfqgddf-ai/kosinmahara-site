@@ -159,6 +159,35 @@ nav a:hover { text-decoration: underline; }
   border: 1px solid var(--line);
   background: #fff;
 }
+/* 헤더를 왼→오 정렬로 두고, 검색창을 맨 오른쪽으로 밀기 */
+.site-header{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  justify-content:flex-start; /* ← 기존에 space-between이면 교체 */
+}
+
+/* 검색 폼: 오른쪽 끝으로 */
+.search-form{ margin-left:auto; }
+.search-form input{
+  width: 220px; max-width: 40vw;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: #fff;
+}
+.dark .search-form input{
+  background:#222; color:#fff; border-color:#555;
+}
+
+/* 화면 좁을 때는 위로 줄바꿈 또는 숨기기(원하는 쪽 택1) */
+
+/* (선택1) 줄바꿈: 아래로 떨어지게 */
+@media (max-width: 960px){
+  .site-header{ flex-wrap:wrap; }
+  .search-form{ order: 3; width: 100%; margin-left: 0; }
+  .search-form input{ width: 100%; max-width: 100%; }
+}
 .dark .search-form input {
   background: #222; color: #fff; border-color: #555;
 }

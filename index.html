@@ -4,48 +4,57 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>고신대학교 Mahara 사용 매뉴얼</title>
+  <meta name="description" content="Mahara에서 포트폴리오(페이지/컬렉션) 만들기, 블록 추가, 공유·제출, 체크리스트까지 한 번에 정리한 실전 매뉴얼.">
   <link rel="icon" href="./favicon.png">
   <link rel="stylesheet" href="./style.css" />
-  <meta name="description" content="Mahara에서 포트폴리오(페이지/컬렉션) 만들기, 블록 추가, 공유/제출, 체크리스트까지 한 번에 정리한 매뉴얼.">
 </head>
 <body>
   <a class="skip-link" href="#main">본문 바로가기</a>
 
+  <!-- 헤더 -->
   <header class="site-edge">
     <div class="container site-header">
-     <h1 class="logo">
-  <a href="./">
-    <img src="./images/logo.png" alt="Mahara 매뉴얼 로고">
-    <span>Mahara 매뉴얼</span>
-  </a>
-</h1>
+      <!-- 로고 (이미지+텍스트) -->
+      <h1 class="logo">
+        <a href="./">
+          <img src="./images/logo.png" alt="Mahara 매뉴얼 로고">
+          <span>Mahara 매뉴얼</span>
+        </a>
+      </h1>
+
+      <!-- (비워둬도 됨) 주 메뉴 컨테이너 -->
       <nav class="nav" aria-label="주 메뉴">
-        <button class="nav-toggle" aria-expanded="false" aria-controls="menu">메뉴</button>
-        <ul id="menu">
-          <li><a href="./about.html">교수자용 안내</a></li>
-        </ul>
+        <ul id="menu"></ul>
       </nav>
+
+      <!-- 오른쪽: 검색창 → 교수자용 안내 버튼(맨 오른쪽) -->
+      <div class="rightbar">
+        <form class="search-form" onsubmit="return false;">
+          <input type="search" id="searchInput" placeholder="검색 (예: 페이지, 공유…)" aria-label="검색">
+        </form>
+        <a class="btn outline cta-btn" href="./about.html">교수자용 안내</a>
+      </div>
     </div>
   </header>
-<button id="darkToggle" class="dark-toggle" aria-label="다크 모드 전환">🌙</button>
 
-<nav class="float-nav" aria-label="빠른 이동">
-  <div class="fn-title">빠른 이동</div>
-  <a href="#start">시작하기</a>
-  <a href="#account">계정</a>
-  <a href="#page">페이지 만들기</a>
-  <a href="#blocks">블록 추가</a>
-  <a href="#share">공유·제출</a>
-  <a href="#collection">컬렉션</a>
-  <a href="#check">체크리스트</a>
-  <a href="#faq">FAQ</a>
-  <button id="toTopMini" class="fn-top" aria-label="맨 위로">↑</button>
-</nav>
-<form class="search-form" onsubmit="return false;">
-  <input type="search" id="searchInput" placeholder="검색 (예: 페이지, 공유…)" aria-label="검색">
-</form>
+  <!-- 다크모드 토글 버튼 -->
+  <button id="darkToggle" class="dark-toggle" aria-label="다크 모드 전환">🌙</button>
 
+  <!-- 떠다니는 빠른 이동 메뉴(오른쪽 고정) -->
+  <nav class="float-nav" aria-label="빠른 이동">
+    <div class="fn-title">빠른 이동</div>
+    <a href="#start">시작하기</a>
+    <a href="#account">계정</a>
+    <a href="#page">페이지 만들기</a>
+    <a href="#blocks">블록 추가</a>
+    <a href="#share">공유·제출</a>
+    <a href="#collection">컬렉션</a>
+    <a href="#check">체크리스트</a>
+    <a href="#faq">FAQ</a>
+    <button id="toTopMini" class="fn-top" aria-label="맨 위로">↑</button>
+  </nav>
 
+  <!-- 본문 -->
   <main id="main">
     <!-- Hero -->
     <section class="container hero">
@@ -57,7 +66,7 @@
       </div>
     </section>
 
-    <!-- 목차 (작은 카드) -->
+    <!-- 목차 카드 -->
     <section class="container toc">
       <div class="grid-3">
         <a class="card link" href="#start"><strong>시작하기</strong><span>권장 브라우저·파일 정리</span></a>
@@ -71,7 +80,7 @@
 
     <!-- 1. 시작하기 -->
     <section class="container section" id="start" aria-labelledby="start-h">
-      <h3 id="start-h">1) 시작하기</h3>
+      <h3 id="start-h">1) 시작하기 <span class="tag green">TIP</span></h3>
       <div class="callout info">
         <p><strong>필수 준비:</strong> 학교에서 제공한 Mahara 접속 주소, 본인 계정(또는 발급 정보), 과제 안내문.</p>
       </div>
@@ -80,28 +89,28 @@
         <li>이미지/파일 폴더 정리: <code>images/</code>, <code>docs/</code> 등</li>
         <li>파일명 규칙 예시: <code>과목_항목_이름_연도.pdf</code></li>
       </ul>
-<div class="figure-grid">
-  <figure class="figure">
-    <a href="https://www.kucm.ac.kr/" target="_blank" rel="noopener noreferrer">
-      <img src="./images/login-1.png" alt="Mahara 로그인 화면 예시 1" loading="lazy">
-    </a>
-    <figcaption>교신대학교 의과대학</figcaption>
-  </figure>
 
-  <figure class="figure">
-    <a href="https://kucmwbi.cafe24.com/moodle/" target="_blank" rel="noopener noreferrer">
-      <img src="./images/login-2.png" alt="Mahara 로그인 화면 예시 2" loading="lazy">
-    </a>
-    <figcaption>WBI Moodle</figcaption>
-  </figure>
-
-  <figure class="figure">
-    <a href="https://ehffag.cpserver.com/mahara/" target="_blank" rel="noopener noreferrer">
-      <img src="./images/login-3.png" alt="Mahara 로그인 화면 예시 3" loading="lazy">
-    </a>
-    <figcaption>ePortfolio Mahara</figcaption>
-  </figure>
-</div>
+      <!-- 로그인 예시 3장 (클릭 시 링크 이동) -->
+      <div class="figure-grid">
+        <figure class="figure">
+          <a href="https://example.com/login-1" target="_blank" rel="noopener noreferrer">
+            <img src="./images/login-1.png" alt="Mahara 로그인 화면 예시 1" loading="lazy">
+          </a>
+          <figcaption>로그인 화면 예시 1</figcaption>
+        </figure>
+        <figure class="figure">
+          <a href="https://example.com/login-2" target="_blank" rel="noopener noreferrer">
+            <img src="./images/login-2.png" alt="Mahara 로그인 화면 예시 2" loading="lazy">
+          </a>
+          <figcaption>로그인 화면 예시 2</figcaption>
+        </figure>
+        <figure class="figure">
+          <a href="https://example.com/login-3" target="_blank" rel="noopener noreferrer">
+            <img src="./images/login-3.png" alt="Mahara 로그인 화면 예시 3" loading="lazy">
+          </a>
+          <figcaption>로그인 화면 예시 3</figcaption>
+        </figure>
+      </div>
     </section>
 
     <!-- 2. 계정 -->
@@ -111,6 +120,9 @@
         <li>학교가 제공한 Mahara 주소로 접속</li>
         <li>가입 또는 학교 계정으로 로그인(SSO)</li>
         <li>프로필에서 이름·학번(또는 ID)·연락 이메일 확인/수정 → 저장</li>
+      </ol>
+      <div class="callout warn">
+        <p><strong>주의:</strong> 비밀번호/복구 이메일을 정확히 등록하세요. <span class="tag amber">주의</span></p>
       </div>
     </section>
 
@@ -171,7 +183,7 @@
       </details>
     </section>
 
-    <!-- 5. 공유/제출 -->
+    <!-- 5. 공유·제출 -->
     <section class="container section" id="share" aria-labelledby="share-h">
       <h3 id="share-h">5) 공유·제출</h3>
       <ol class="steps">
@@ -194,7 +206,7 @@
 
     <!-- 7. 체크리스트 -->
     <section class="container section" id="check" aria-labelledby="check-h">
-      <h3 id="check-h">7) 제출 전 체크리스트</h3>
+      <h3 id="check-h">7) 제출 전 체크리스트 <span class="tag gray">체크</span></h3>
       <ul class="checklist">
         <li><input type="checkbox" id="c1"><label for="c1"> 표지(이름/학번/연도)</label></li>
         <li><input type="checkbox" id="c2"><label for="c2"> 학습 성과 섹션 3개 이상</label></li>
@@ -227,6 +239,7 @@
     </section>
   </main>
 
+  <!-- 푸터 -->
   <footer class="site-edge">
     <div class="container site-footer">
       <small>© 2025 Kosin University · Mahara Manual</small>
