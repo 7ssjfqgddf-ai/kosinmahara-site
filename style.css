@@ -168,7 +168,16 @@ nav a:hover { text-decoration: underline; }
 }
 
 /* 검색 폼: 오른쪽 끝으로 */
-.search-form{ margin-left:auto; }
+.rightbar{
+- margin-left:auto;
++ margin-left:0;
+  display:flex; align-items:center; gap:10px;
+}
+
+/* 검색창만 오른쪽으로 밀기 위해 추가 */
+.search-form{
+  margin-left:auto;
+}
 .search-form input{
   width: 220px; max-width: 40vw;
   padding: 8px 10px;

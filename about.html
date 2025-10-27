@@ -3,77 +3,105 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>교수자용 안내 | Mahara 매뉴얼</title>
+  <title>학생용 가이드 | Mahara 매뉴얼</title>
+  <meta name="description" content="학생용 가이드로 이동하거나 요약 안내를 확인하세요.">
   <link rel="icon" href="./favicon.png">
   <link rel="stylesheet" href="./style.css" />
-  <meta name="description" content="평가 기준 예시, 제출 정책, 점검 절차 등 교수자용 안내.">
 </head>
 <body>
+  <a class="skip-link" href="#main">본문 바로가기</a>
+
+  <!-- 헤더 (index와 동일 구조) -->
   <header class="site-edge">
     <div class="container site-header">
+      <!-- 로고 -->
       <h1 class="logo">
-  <a href="./">
-    <img src="./images/logo.png" alt="Mahara 매뉴얼 로고">
-    <span>Mahara 매뉴얼</span>
-  </a>
-</h1>
+        <a href="./">
+          <img src="./images/logo.png" alt="Mahara 매뉴얼 로고">
+          <span>Mahara 매뉴얼</span>
+        </a>
+      </h1>
+
+      <!-- (비워둬도 됨) 주 메뉴 컨테이너 -->
       <nav class="nav" aria-label="주 메뉴">
-  <ul id="menu">
-    <li><a href="./index.html">학생용 가이드</a></li>
-  </ul>
-</nav>
+        <ul id="menu"></ul>
+      </nav>
+
+      <!-- 오른쪽: 검색창 → (이 페이지에서는) 학생용 가이드(홈) 버튼 -->
+      <div class="rightbar">
+        <form class="search-form" onsubmit="return false;">
+          <input type="search" id="searchInput" placeholder="검색 (예: 페이지, 공유…)" aria-label="검색">
+        </form>
+        <a class="btn outline cta-btn" href="./index.html">학생용 가이드(홈)</a>
+      </div>
     </div>
   </header>
- <button id="darkToggle" class="dark-toggle" aria-label="다크 모드 전환">🌙</button>
+
+  <!-- 다크모드 토글 -->
+  <button id="darkToggle" class="dark-toggle" aria-label="다크 모드 전환">🌙</button>
+
+  <!-- 떠다니는 빠른 이동(about 전용 섹션) -->
+  <nav class="float-nav" aria-label="빠른 이동">
+    <div class="fn-title">빠른 이동</div>
+    <a href="#overview">요약 안내</a>
+    <a href="#shortcuts">바로가기</a>
+    <button id="toTopMini" class="fn-top" aria-label="맨 위로">↑</button>
+  </nav>
 
   <main id="main">
+    <!-- Hero -->
     <section class="container hero">
-      <h2>교수자용 안내</h2>
-      <p class="lead">평가 기준, 제출 정책 샘플, 품질 점검 절차의 예시를 들었습니다.</p>
+      <h2>학생용 가이드(홈)으로 이동</h2>
+      <p class="lead">Mahara 사용 매뉴얼의 전체 흐름은 학생용 가이드에서 확인하세요.</p>
+      <div class="quick-links">
+        <a href="./index.html#start" class="btn">바로 시작하기</a>
+        <a href="./index.html#share" class="btn outline">공유·제출 보기</a>
+      </div>
     </section>
 
-    <section class="container section">
-      <h3>평가 기준 예시(총 100점)</h3>
+    <!-- 요약 안내 -->
+    <section class="container section" id="overview" aria-labelledby="overview-h">
+      <h3 id="overview-h">요약 안내</h3>
       <div class="grid-3 soft">
-        <article class="card"><h4>구조 · 구성 (30)</h4><p>섹션 구성의 논리, 정보 배치의 명확성.</p></article>
-        <article class="card"><h4>내용 충실 (40)</h4><p>성과의 구체성, 증빙 적절성, 반증/한계 기술.</p></article>
-        <article class="card"><h4>성찰 (20)</h4><p>강점·개선점·다음 목표의 균형.</p></article>
+        <article class="card">
+          <h4>흐름 한눈에</h4>
+          <p>계정 생성 → 페이지 만들기 → 블록 추가 → 공유·제출 → 체크리스트.</p>
+        </article>
+        <article class="card">
+          <h4>필수 확인</h4>
+          <p>공유 대상/기간 설정, 로그아웃 상태에서 링크 테스트.</p>
+        </article>
+        <article class="card">
+          <h4>품질 팁</h4>
+          <p>성과는 구체적으로, 이미지/표엔 출처 표기, 모바일 미리보기 확인.</p>
+        </article>
       </div>
-      <div class="card" style="margin-top:12px;">
-        <h4>표현/저작권 (10)</h4>
-        <p>가독성(오탈자·대비), 이미지/표 출처 명시, 라이선스 준수.</p>
+    </section>
+
+    <!-- 바로가기 카드 -->
+    <section class="container section" id="shortcuts" aria-labelledby="shortcuts-h">
+      <h3 id="shortcuts-h">바로가기</h3>
+      <div class="grid-3">
+        <a class="card link" href="./index.html#account"><strong>계정 만들기</strong><span>가입/로그인, 프로필 설정</span></a>
+        <a class="card link" href="./index.html#page"><strong>페이지 만들기</strong><span>제목·레이아웃·저장</span></a>
+        <a class="card link" href="./index.html#blocks"><strong>블록 추가</strong><span>텍스트/이미지/파일/임베드</span></a>
+        <a class="card link" href="./index.html#share"><strong>공유·제출</strong><span>권한·기간·미리보기</span></a>
+        <a class="card link" href="./index.html#collection"><strong>컬렉션</strong><span>여러 페이지 묶기</span></a>
+        <a class="card link" href="./index.html#check"><strong>체크리스트</strong><span>제출 전 확인</span></a>
       </div>
-    </section>
-
-    <section class="container section">
-      <h3>제출 정책 샘플</h3>
-      <ul class="check">
-        <li>제출 형태: <strong>컬렉션 링크</strong> 제출(필요 시 비공개 링크)</li>
-        <li>마감: 매학기 기말 시험 주간 <em>금요일 23:59</em></li>
-        <li>지각: 24시간 내 -10%, 48시간 내 -30%</li>
-        <li>표절: 학교 규정에 따름(유사도 검사)</li>
-      </ul>
-    </section>
-
-    <section class="container section">
-      <h3>품질 점검 절차</h3>
-      <ol class="steps">
-        <li>제출 링크 무작위 표본 열람(로그아웃 상태 테스트 포함)</li>
-        <li>체크리스트 준수 여부 확인(섹션 수, 성찰, 증빙)</li>
-        <li>피드백 제공(강점·개선점 1:1)</li>
-      </ol>
-    </section>
-
-    <section class="container nextnav">
-      <a class="btn outline" href="./">학생용 매뉴얼로</a>
+      <p class="nextnav" style="margin-top:12px;">
+        <a class="btn" href="./index.html">학생용 가이드(홈)으로</a>
+      </p>
     </section>
   </main>
 
+  <!-- 푸터 -->
   <footer class="site-edge">
     <div class="container site-footer">
       <small>© 2025 Kosin University · Mahara Manual</small>
     </div>
   </footer>
-<script src="./script.js"></script>
+
+  <script src="./script.js"></script>
 </body>
 </html>
