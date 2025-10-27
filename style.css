@@ -87,8 +87,8 @@ nav a:hover { text-decoration: underline; }
 }
 
 .logo a { display:flex; align-items:center; gap:10px; text-decoration:none; color:inherit; }
-.logo img { height:28px; display:block; }
-@media (max-width:720px){ .logo img{ height:24px; } }
+.logo img { height:40px; display:block; }
+@media (max-width:720px){ .logo img{ height:32px; } }
 .figure-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
 @media (max-width: 760px) { .figure-grid { grid-template-columns: 1fr; } }
 
