@@ -105,4 +105,60 @@ nav a:hover { text-decoration: underline; }
 }
 .float-nav a.active{ background:#e8f0ff; font-weight:600; }
 @media (max-width: 960px){ .float-nav{ display:none; } } /* 모바일에선 숨김 */
+/* ---------- 다크 모드 ---------- */
+.dark {
+  --bg: #111;
+  --text: #f5f5f5;
+  --muted: #aaaaaa;
+  --edge: #1a1a1a;
+  --line: #333333;
+  --brand: #69a7ff;
+  --brand-weak: #1e3c66;
+}
+.dark .card,
+.dark .accordion,
+.dark .callout,
+.dark nav ul {
+  background: #1a1a1a;
+  border-color: #333;
+}
+.dark .site-edge,
+.dark .site-footer {
+  background: #1a1a1a;
+  border-color: #333;
+}
+.dark-toggle {
+  position: fixed; right: 16px; bottom: 16px;
+  background: #222; color: #fff;
+  border: none; border-radius: 50%;
+  width: 42px; height: 42px; cursor: pointer;
+  font-size: 18px;
+  box-shadow: 0 4px 10px rgba(0,0,0,.3);
+  z-index: 2000;
+}
+.dark .dark-toggle {
+  background: #eee; color: #111;
+}
+/* ---------- 검색 ---------- */
+.search-form { margin-top: 8px; }
+.search-form input {
+  width: 100%; max-width: 200px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: #fff;
+}
+.dark .search-form input {
+  background: #222; color: #fff; border-color: #555;
+}
+/* 다크 모드용 카드 배경 통일 */
+.dark .card {
+  background: #1e1e1e;
+  border-color: #444;
+  color: #e8e8e8;
+}
 
+/* 카드 제목(강조) */
+.dark .card h4 {
+  color: #ffffff;
+}

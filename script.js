@@ -44,3 +44,31 @@ const toTop = document.getElementById('toTop');
 if (toTop) toTop.addEventListener('click', e => {
   e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' });
 });
+// 다크 모드 토글
+const darkToggle = document.getElementById('darkToggle');
+if (darkToggle) {
+  darkToggle.addEventListener('click', () => {
+    document.documentElement.classList.toggle('dark');
+    // 사용자 설정 기억
+    localStorage.setItem('dark-mode',
+      document.documentElement.classList.contains('dark') ? 'on' : 'off'
+    );
+  });
+
+  // 초기 로드 시 모드 복원
+  if (localStorage.getItem('dark-mode') === 'on') {
+    document.documentElement.classList.add('dark');
+  }
+}
+// 간단 페이지 검색(섹션 제목 중심)
+const searchInput = document.getElementById('searchInput');
+if (searchInput) {
+  searchInput.addEventListener('input', () => {
+    const word = searchInput.value.toLowerCase();
+    const links = document.querySelectorAll('.float-nav a');
+    links.forEach(a => {
+      const match = a.textContent.toLowerCase().includes(word);
+      a.style.display = match || !word ? '' : 'none';
+    });
+  });
+}
