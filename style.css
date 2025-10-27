@@ -1,13 +1,23 @@
-:root {
-  --bg: #ffffff;
-  --text: #111111;
-  --muted: #555555;
-  --edge: #f5f5f7;
-  --line: #e5e5e5;
-  --brand: #0b5bd3;
-  --brand-weak: #e8f0ff;
+:root{
+  /* Kosin 4-Color Palette */
+  --brand:        #0b4ea2; /* Primary Blue */
+  --brand-weak:   #e7efff; /* Light Blue bg */
+  --brand-strong: #083a7a; /* Darker Blue */
+
+  --accent1:      #2ea69a; /* Pastel Teal/Green */
+  --accent1-weak: #e7f6f4;
+
+  --accent2:      #f2a23a; /* Pastel Amber/Orange */
+  --accent2-weak: #fff2df;
+
+  --neutral:      #6b7280; /* Slate Gray */
+  --neutral-weak: #f3f4f6;
+
+  /* Base */
+  --bg:#ffffff; --text:#111111; --muted:#555555;
+  --edge:#f5f5f7; --line:#e5e5e5;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-  scroll-behavior: smooth;
+  scroll-behavior:smooth;
 }
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); line-height: 1.6; }
@@ -106,14 +116,15 @@ nav a:hover { text-decoration: underline; }
 .float-nav a.active{ background:#e8f0ff; font-weight:600; }
 @media (max-width: 960px){ .float-nav{ display:none; } } /* 모바일에선 숨김 */
 /* ---------- 다크 모드 ---------- */
-.dark {
-  --bg: #111;
-  --text: #f5f5f5;
-  --muted: #aaaaaa;
-  --edge: #1a1a1a;
-  --line: #333333;
-  --brand: #69a7ff;
-  --brand-weak: #1e3c66;
+.dark{
+  --bg:#111; --text:#f5f5f5; --muted:#aaaaaa;
+  --edge:#1a1a1a; --line:#333333;
+
+  /* Dark mode tints */
+  --brand:#8db9ff;        --brand-weak:#203553;      --brand-strong:#b9d4ff;
+  --accent1:#7bd3c9;      --accent1-weak:#153a37;
+  --accent2:#ffc57c;      --accent2-weak:#3a2a14;
+  --neutral:#c9ced6;      --neutral-weak:#1f232a;
 }
 .dark .card,
 .dark .accordion,
@@ -211,3 +222,18 @@ nav a:hover { text-decoration: underline; }
 .dark .card p,
 .dark .card span,
 .dark .card li { color: #d5d5d5; }
+/* 링크/버튼 */
+a{ color: var(--brand); }
+.btn{ background:var(--brand); border:1px solid var(--brand); color:#fff; }
+.btn.outline{ background:#fff; color:var(--brand); border-color:var(--brand); }
+.dark .btn.outline{ background:#111; }
+
+/* 콜아웃 */
+.callout.info{ background: var(--brand-weak);  border-color:#d7e6ff; }
+.callout.warn{ background: var(--accent2-weak); border-color:#ffd79f; }
+
+/* Floating Nav */
+.float-nav a{ color: var(--brand); }
+.float-nav a.active{ background: var(--brand-weak); border:1px solid #d7e6ff; }
+.dark .float-nav a{ color:#9fc4ff; }
+.dark .float-nav a.active{ background: var(--brand-weak); border-color:#2c4670; color:#cfe2ff; }
