@@ -275,3 +275,47 @@ a{ color: var(--brand); }
 .float-nav a.active{ background: var(--brand-weak); border:1px solid #d7e6ff; }
 .dark .float-nav a{ color:#9fc4ff; }
 .dark .float-nav a.active{ background: var(--brand-weak); border-color:#2c4670; color:#cfe2ff; }
+
+/* ✅ 라이트박스 스타일 */
+.lightbox{
+  position:fixed; inset:0;
+  background:rgba(0,0,0,0.85);
+  display:none; justify-content:center; align-items:center;
+  z-index:3000;
+}
+.lightbox.active{ display:flex; }
+.lb-img{ max-width:90%; max-height:90%; border-radius:12px; }
+
+.lb-prev, .lb-next{
+  position:absolute; top:50%; transform:translateY(-50%);
+  background:none; border:none; color:#fff;
+  font-size:48px; font-weight:900; cursor:pointer;
+  padding:10px 16px; user-select:none;
+}
+.lb-prev{ left:20px; }
+.lb-next{ right:20px; }
+
+@media(max-width:760px){
+  .lb-prev, .lb-next{ font-size:38px; }
+}
+
+/* ✅ 검색 하이라이트 */
+mark.hl{
+  background: var(--brand-weak);
+  color: inherit;
+  padding: 0 2px;
+  border-radius: 4px;
+}
+.dark mark.hl{
+  background: #3a4b6a;
+}
+
+/* ✅ 검색 결과 카운트 뱃지 */
+.search-count{
+  display:inline-block; margin-left:8px; padding:2px 8px;
+  font-size:.82rem; border-radius:999px;
+  background: var(--neutral-weak); color: var(--neutral);
+}
+.dark .search-count{
+  background:#222; color:#ddd; border:1px solid #444;
+}

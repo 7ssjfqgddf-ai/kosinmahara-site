@@ -31,7 +31,8 @@
       <div class="rightbar">
         <form class="search-form" onsubmit="return false;">
           <input type="search" id="searchInput" placeholder="검색 (예: 페이지, 공유…)" aria-label="검색">
-        </form>
+           <span id="searchCount" class="search-count" aria-live="polite"></span>
+         </form>
         <a class="btn outline cta-btn" href="./about.html">교수자용 안내</a>
       </div>
     </div>
@@ -90,27 +91,35 @@
         <li>파일명 규칙 예시: <code>과목_항목_이름_연도.pdf</code></li>
       </ul>
 
-      <!-- 로그인 예시 3장 (클릭 시 링크 이동) -->
-      <div class="figure-grid">
-        <figure class="figure">
-          <a href="https://www.kucm.ac.kr/" target="_blank" rel="noopener noreferrer">
-            <img src="./images/login-1.png" alt="Mahara 로그인 화면 예시 1" loading="lazy">
-          </a>
-          <figcaption>로그인 화면 예시 1</figcaption>
-        </figure>
-        <figure class="figure">
-          <a href="https://kucmwbi.cafe24.com/moodle/" target="_blank" rel="noopener noreferrer">
-            <img src="./images/login-2.png" alt="Mahara 로그인 화면 예시 2" loading="lazy">
-          </a>
-          <figcaption>로그인 화면 예시 2</figcaption>
-        </figure>
-        <figure class="figure">
-          <a href="https://ehffag.cpserver.com/mahara/" target="_blank" rel="noopener noreferrer">
-            <img src="./images/login-3.png" alt="Mahara 로그인 화면 예시 3" loading="lazy">
-          </a>
-          <figcaption>로그인 화면 예시 3</figcaption>
-        </figure>
-      </div>
+  <!-- 로그인 예시 3장 -->
+<div class="figure-grid">
+  <figure class="figure">
+    <img src="./images/login-1.png" alt="Mahara 로그인 화면 예시 1" loading="lazy">
+    <figcaption>
+      <a href="https://www.kucm.ac.kr/" target="_blank" rel="noopener noreferrer">
+        고신대학교 의과대학
+      </a>
+    </figcaption>
+  </figure>
+
+  <figure class="figure">
+    <img src="./images/login-2.png" alt="Mahara 로그인 화면 예시 2" loading="lazy">
+    <figcaption>
+      <a href="https://kucmwbi.cafe24.com/moodle/"_blank" rel="noopener noreferrer">
+        WBI
+      </a>
+    </figcaption>
+  </figure>
+
+  <figure class="figure">
+    <img src="./images/login-3.png" alt="Mahara 로그인 화면 예시 3" loading="lazy">
+    <figcaption>
+      <a href="https://ehffag.cpserver.com/mahara/" target="_blank" rel="noopener noreferrer">
+        Mahara
+      </a>
+    </figcaption>
+  </figure>
+</div>
     </section>
 
     <!-- 2. 계정 -->
@@ -118,11 +127,9 @@
       <h3 id="account-h">2) 계정 만들기 & 로그인</h3>
       <ol class="steps">
         <li>학교가 제공한 Mahara 주소로 접속</li>
-        <li>가입 또는 학교 계정으로 로그인(SSO)</li>
+        <li>가입 또는 학교 계정으로 로그인</li>
         <li>프로필에서 이름·학번(또는 ID)·연락 이메일 확인/수정 → 저장</li>
       </ol>
-      <div class="callout warn">
-        <p><strong>주의:</strong> 비밀번호/복구 이메일을 정확히 등록하세요. <span class="tag amber">주의</span></p>
       </div>
     </section>
 
@@ -237,6 +244,12 @@
       <a class="btn" href="./about.html">교수자용 안내로 이동</a>
       <a class="btn outline" href="#top" id="toTop">맨 위로</a>
     </section>
+<!-- ✅ 라이트박스 요소 -->
+<div id="lightbox" class="lightbox" aria-hidden="true">
+  <button class="lb-prev" aria-label="이전">‹</button>
+  <img class="lb-img" src="" alt="확대 이미지">
+  <button class="lb-next" aria-label="다음">›</button>
+</div>
   </main>
 
   <!-- 푸터 -->

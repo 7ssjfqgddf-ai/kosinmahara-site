@@ -78,6 +78,38 @@ if (darkToggle) {
 }
 
 // ===== 간단 검색: 떠다니는 메뉴 필터 =====
+// ✅ 라이트박스 기능
+const galleryImgs = document.querySelectorAll('.figure-grid img');
+const lightbox = document.getElementById('lightbox');
+const lightImg = document.querySelector('.lb-img');
+const prevBtn = document.querySelector('.lb-prev');
+const nextBtn = document.querySelector('.lb-next');
+
+let currentIndex = 0;
+function showLightbox(index){
+  currentIndex = index;
+  lightImg.src = galleryImgs[currentIndex].src;
+  lightbox.classList.add('active');
+}
+function hideLightbox(){
+  lightbox.classList.remove('active');
+}
+galleryImgs.forEach((img, i)=>{
+  img.addEventListener('click',()=> showLightbox(i));
+});
+lightbox.addEventListener('click', (e)=>{
+  if(e.target === lightbox) hideLightbox();
+});
+prevBtn.addEventListener('click', ()=>{
+  showLightbox((currentIndex - 1 + galleryImgs.length) % galleryImgs.length);
+});
+nextBtn.addEventListener('click', ()=>{
+  showLightbox((currentIndex + 1) % galleryImgs.length);
+});
+document.addEventListener('keydown',(e)=>{
+  if(e.key === 'Escape') hideLightbox();
+});
+
 const searchInput = document.getElementById('searchInput');
 if (searchInput) {
   searchInput.addEventListener('input', () => {
