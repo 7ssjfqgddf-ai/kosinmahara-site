@@ -250,6 +250,25 @@
   <img class="lb-img" src="" alt="확대 이미지">
   <button class="lb-next" aria-label="다음">›</button>
 </div>
+<!-- ✅ 온보딩 모달 -->
+<div id="onboard" class="onboard" role="dialog" aria-modal="true" aria-labelledby="ob-title" aria-hidden="true">
+  <div class="ob-dialog">
+    <button class="ob-close" type="button" aria-label="닫기">×</button>
+    <h3 id="ob-title">처음이신가요?</h3>
+    <p class="ob-lead">Mahara 사용 순서를 따라가며 빠르게 시작해보세요.</p>
+    <ul class="ob-steps">
+      <li>1) 계정 만들기</li>
+      <li>2) 페이지 만들기</li>
+      <li>3) 블록 추가</li>
+      <li>4) 공유·제출</li>
+    </ul>
+    <div class="ob-actions">
+      <a class="btn" href="#start" id="obStart">시작하기</a>
+      <button class="btn outline" type="button" id="obLater">나중에</button>
+      <button class="btn outline" type="button" id="obNever">다시 보지 않기</button>
+    </div>
+  </div>
+</div>
   </main>
 
   <!-- 푸터 -->
