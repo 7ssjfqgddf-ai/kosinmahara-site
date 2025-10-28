@@ -276,3 +276,11 @@ document.addEventListener('keydown',(e)=>{
     if(e.key === 'Escape') closeModal('later');
   });
 })();
+
+// ✅ 인쇄 버튼
+const printBtn = document.getElementById('printBtn');
+if (printBtn) {
+  printBtn.addEventListener('click', () => {
+    window.print();
+  });
+}

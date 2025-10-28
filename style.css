@@ -349,3 +349,72 @@ mark.hl{
 /* 다크 모드 */
 .dark .ob-dialog{ background:#1e1e1e; color:#f1f1f1; border-color:#444; }
 .dark .ob-close{ background:#1e1e1e; color:#f1f1f1; border-color:#444; }
+
+/* ========== 인쇄/PDF 스타일 ========== */
+@media print {
+  /* 1) 용지/여백 설정
+     - 기본: A4 세로
+     - 가로로 뽑고 싶으면 아래 한 줄을 주석 해제하고, 첫 줄은 주석 처리하세요.
+  */
+  @page { size: A4; margin: 12mm 14mm; }
+  /* @page { size: A4 landscape; margin: 12mm 14mm; } */
+
+  /* 2) 색/배경 최소화 + 대비 강화 */
+  html, body { background:#fff !important; color:#000 !important; }
+  a { color:#000 !important; text-decoration:underline; }
+  .site-edge, .site-header, .site-footer { background:#fff !important; border:none !important; }
+  .card, .accordion, .callout {
+    background:#fff !important; color:#000 !important;
+    border:1px solid #bfbfbf !important; box-shadow:none !important;
+  }
+  .section h3::after { background:#000 !important; }
+
+  /* 3) 화면 전용 UI 숨김 (인쇄에 불필요) */
+  .float-nav,
+  .dark-toggle,
+  .rightbar .search-form,
+  .rightbar .cta-btn,
+  #printBtn,
+  .quick-links,
+  .nextnav,
+  nav.nav { display:none !important; }
+
+  /* 4) 타이포/레이아웃: 읽기 좋게 */
+  .container { max-width:none; padding:0; }
+  .hero { padding:0; }
+  .grid-3 { grid-template-columns: 1fr !important; gap: 8px !important; }
+  .figure img { border:none !important; }
+  .figure figcaption { color:#000 !important; }
+
+  /* 5) 페이지 나눔 최적화(쪼개짐 방지) */
+  h2, h3, .card, .accordion, .figure, .steps, .checklist, .section {
+    break-inside: avoid; page-break-inside: avoid;
+  }
+  /* 각 주요 섹션은 새 페이지에서 시작 (필요한 것만 골라 주석 해제/추가 가능) */
+  #page, #blocks, #share, #collection, #check, #faq { break-before: page; page-break-before: always; }
+
+  /* 6) 링크 주소를 본문에 표시 (외부 링크만) */
+  a[href^="http"]:after {
+    content: " (" attr(href) ")";
+    font-size: 0.9em;
+  }
+
+  /* 7) 체크박스 선명도 */
+  .checklist input[type="checkbox"]{
+    width: 12px; height: 12px; border:1px solid #000; appearance: none; display:inline-block; margin-right:6px;
+  }
+  .checklist input[type="checkbox"]:checked{ background:#000; }
+
+  /* 8) 색 변수 무력화 */
+  :root, .dark {
+    --brand:#000; --brand-weak:#fff; --brand-strong:#000;
+    --accent1:#000; --accent1-weak:#fff;
+    --accent2:#000; --accent2-weak:#fff;
+    --neutral:#000; --neutral-weak:#fff;
+  }
+}
+
+/* 화면 미리보기용 보조(선택) */
+@media screen {
+  mark.hl { outline:1px dashed rgba(0,0,0,.15); }
+}
