@@ -318,3 +318,23 @@ if (printBtn) {
   window.addEventListener('load', applyHeaderState);
   applyHeaderState();
 })();
+
+// === 검색 단축키 ===
+// 1) '/' 또는 Ctrl/⌘+K → 검색창 포커스
+// 2) ESC(검색창에서) → 검색어 비우고 하이라이트/카운트 초기화
+document.addEventListener('keydown', (e)=>{
+  const inInput = ['INPUT','TEXTAREA'].includes(document.activeElement.tagName);
+  if ((e.key === '/' && !inInput) || (e.key.toLowerCase() === 'k' && (e.ctrlKey || e.metaKey))) {
+    e.preventDefault();
+    const box = document.getElementById('searchInput');
+    if (box) { box.focus(); box.select(); }
+  }
+  if (e.key === 'Escape' && document.activeElement?.id === 'searchInput') {
+    const box = document.getElementById('searchInput');
+    if (box) box.value = '';
+    // 떠다니는 메뉴 복원 + 본문 하이라이트 제거 + 카운트 0
+    const links = document.querySelectorAll('.float-nav a'); links.forEach(a=> a.style.display = '');
+    if (typeof highlightAll === 'function') highlightAll('');
+    if (typeof updateCount === 'function') updateCount(0);
+  }
+});

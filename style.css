@@ -459,3 +459,56 @@ header.site-edge.scrolled .site-header{ padding-top: 6px; padding-bottom: 6px; }
   box-shadow: 0 10px 28px rgba(0,0,0,.45);
   border-bottom-color:#305b9c;
 }
+
+/* === 섹션 & 떠다니는 메뉴 아이콘 === */
+/* 섹션 제목 아이콘 */
+.section h3{ display:flex; align-items:center; gap:8px; }
+#start    h3::before{ content:"🚀"; }
+#account  h3::before{ content:"🔑"; }
+#page     h3::before{ content:"🧩"; }
+#blocks   h3::before{ content:"🖼️"; }   /* 블록 */
+#share    h3::before{ content:"🔗"; }
+#collection h3::before{ content:"📚"; }
+#check    h3::before{ content:"✅"; }
+#faq      h3::before{ content:"❓"; }
+
+/* 떠다니는 메뉴 아이콘 */
+.float-nav a{ display:flex; align-items:center; gap:8px; }
+.float-nav a[href="#start"]::before{ content:"🚀"; }
+.float-nav a[href="#account"]::before{ content:"🔑"; }
+.float-nav a[href="#page"]::before{ content:"🧩"; }
+.float-nav a[href="#blocks"]::before{ content:"🖼️"; }
+.float-nav a[href="#share"]::before{ content:"🔗"; }
+.float-nav a[href="#collection"]::before{ content:"📚"; }
+.float-nav a[href="#check"]::before{ content:"✅"; }
+.float-nav a[href="#faq"]::before{ content:"❓"; }
+
+/* 태그 배지 아이콘(기존 .tag 활용) */
+.tag.green::before{ content:"💡"; margin-right:4px; }
+.tag.amber::before{ content:"⚠️"; margin-right:4px; }
+.tag.gray::before{  content:"ℹ️"; margin-right:4px; }
+
+/* === Footer Links === */
+.site-footer{ flex-direction:column; align-items:stretch; gap:14px; }
+.footer-grid{
+  display:grid; grid-template-columns: repeat(3, 1fr); gap:16px;
+}
+.footer-grid h4{ margin:0 0 8px; font-size:1rem; }
+.footer-grid ul{ list-style:none; margin:0; padding:0; }
+.footer-grid li{ margin:6px 0; }
+.footer-grid a{ text-decoration:none; color: var(--brand); }
+.footer-grid a:hover{ text-decoration:underline; }
+
+.footer-note{
+  display:flex; justify-content:space-between; align-items:center;
+  border-top:1px solid var(--line); padding-top:10px;
+}
+
+/* 반응형 */
+@media (max-width: 960px){
+  .footer-grid{ grid-template-columns: 1fr; }
+  .footer-note{ flex-direction:column; gap:6px; align-items:flex-start; }
+}
+
+/* 다크 모드 */
+.dark .footer-grid a{ color:#9fc4ff; }
