@@ -418,3 +418,16 @@ mark.hl{
 @media screen {
   mark.hl { outline:1px dashed rgba(0,0,0,.15); }
 }
+
+/* === Scroll Reveal === */
+.reveal {
+  opacity: 0; transform: translateY(12px); transition: opacity .45s ease, transform .45s ease;
+}
+.reveal.on {
+  opacity: 1; transform: translateY(0);
+}
+
+/* 카드 호버 강화 (접근성 안전한 범위) */
+.card { transition: transform .15s ease, box-shadow .15s ease; }
+.card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.08); }
+.dark .card:hover { box-shadow: 0 8px 24px rgba(0,0,0,.35); }

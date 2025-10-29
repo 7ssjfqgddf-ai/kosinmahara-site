@@ -284,3 +284,22 @@ if (printBtn) {
     window.print();
   });
 }
+
+// === Scroll Reveal (IntersectionObserver) ===
+(function(){
+  const els = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window) || !els.length) {
+    // 폴백: JS 미지원/요소 없음 → 바로 표시
+    els.forEach(el => el.classList.add('on'));
+    return;
+  }
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if (e.isIntersecting){
+        e.target.classList.add('on');
+        io.unobserve(e.target); // 한 번만 애니메이션
+      }
+    });
+  }, {root:null, rootMargin:'0px 0px -10% 0px', threshold:0.1});
+  els.forEach(el => io.observe(el));
+})();
