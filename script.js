@@ -303,3 +303,18 @@ if (printBtn) {
   }, {root:null, rootMargin:'0px 0px -10% 0px', threshold:0.1});
   els.forEach(el => io.observe(el));
 })();
+
+// === Header Scroll Effect ===
+(function(){
+  const header = document.querySelector('header.site-edge');
+  if(!header) return;
+
+  function applyHeaderState(){
+    const y = window.scrollY || document.documentElement.scrollTop || 0;
+    header.classList.toggle('scrolled', y > 10);
+  }
+
+  window.addEventListener('scroll', applyHeaderState, { passive: true });
+  window.addEventListener('load', applyHeaderState);
+  applyHeaderState();
+})();
