@@ -27,14 +27,14 @@
         <ul id="menu"></ul>
       </nav>
 
-      <!-- 오른쪽: 검색창 → 교수자용 안내 버튼(맨 오른쪽) -->
+      <!-- 오른쪽: 검색창 → 교수자용 안내 버튼 → 인쇄 -->
       <div class="rightbar">
         <form class="search-form" onsubmit="return false;">
           <input type="search" id="searchInput" placeholder="검색 (예: 페이지, 공유…)" aria-label="검색">
-           <span id="searchCount" class="search-count" aria-live="polite"></span>
-         </form>
+          <span id="searchCount" class="search-count" aria-live="polite"></span>
+        </form>
         <a class="btn outline cta-btn" href="./about.html">교수자용 안내</a>
-       <button type="button" class="btn outline" id="printBtn">인쇄</button>
+        <button type="button" class="btn outline" id="printBtn">인쇄</button>
       </div>
     </div>
   </header>
@@ -92,35 +92,35 @@
         <li>파일명 규칙 예시: <code>과목_항목_이름_연도.pdf</code></li>
       </ul>
 
-  <!-- 로그인 예시 3장 -->
-<div class="figure-grid">
-  <figure class="figure">
-    <img src="./images/login-1.png" alt="Mahara 로그인 화면 예시 1" loading="lazy">
-    <figcaption>
-      <a href="https://www.kucm.ac.kr/" target="_blank" rel="noopener noreferrer">
-        고신대학교 의과대학
-      </a>
-    </figcaption>
-  </figure>
+      <!-- 로그인 예시 3장 -->
+      <div class="figure-grid">
+        <figure class="figure">
+          <img src="./images/login-1.png" alt="Mahara 로그인 화면 예시 1" loading="lazy">
+          <figcaption>
+            <a href="https://www.kucm.ac.kr/" target="_blank" rel="noopener noreferrer">
+              고신대학교 의과대학
+            </a>
+          </figcaption>
+        </figure>
 
-  <figure class="figure">
-    <img src="./images/login-2.png" alt="Mahara 로그인 화면 예시 2" loading="lazy">
-    <figcaption>
-      <a href="https://kucmwbi.cafe24.com/moodle/"_blank" rel="noopener noreferrer">
-        WBI
-      </a>
-    </figcaption>
-  </figure>
+        <figure class="figure">
+          <img src="./images/login-2.png" alt="Mahara 로그인 화면 예시 2" loading="lazy">
+          <figcaption>
+            <a href="https://kucmwbi.cafe24.com/moodle/" target="_blank" rel="noopener noreferrer">
+              WBI
+            </a>
+          </figcaption>
+        </figure>
 
-  <figure class="figure">
-    <img src="./images/login-3.png" alt="Mahara 로그인 화면 예시 3" loading="lazy">
-    <figcaption>
-      <a href="https://ehffag.cpserver.com/mahara/" target="_blank" rel="noopener noreferrer">
-        Mahara
-      </a>
-    </figcaption>
-  </figure>
-</div>
+        <figure class="figure">
+          <img src="./images/login-3.png" alt="Mahara 로그인 화면 예시 3" loading="lazy">
+          <figcaption>
+            <a href="https://ehffag.cpserver.com/mahara/" target="_blank" rel="noopener noreferrer">
+              Mahara
+            </a>
+          </figcaption>
+        </figure>
+      </div>
     </section>
 
     <!-- 2. 계정 -->
@@ -131,7 +131,6 @@
         <li>가입 또는 학교 계정으로 로그인</li>
         <li>프로필에서 이름·학번(또는 ID)·연락 이메일 확인/수정 → 저장</li>
       </ol>
-      </div>
     </section>
 
     <!-- 3. 페이지 만들기 -->
@@ -161,32 +160,36 @@
     <!-- 4. 블록 추가 -->
     <section class="container section reveal" id="blocks" aria-labelledby="blocks-h">
       <h3 id="blocks-h">4) 블록 추가(내용 넣기)</h3>
+
       <details class="accordion" open>
         <summary>텍스트 블록</summary>
         <ul class="bullet">
-          <li>문단은 3~5문장으로 간결히, 굵게/리스트로 구조화</li>
-          <li>성과는 수치/결과 중심(예: “정확도 92%”)</li>
+          <li>문단은 3~5문장으로 간결하게 쓰고, 중요한 건 굵게.</li>
+          <li>성과는 수치/결과 중심으로 (예: “출석 100%”, “참여도 95%”).</li>
         </ul>
       </details>
-      <details class="accordion">
+
+      <details class="accordion" open>
         <summary>이미지 블록</summary>
         <ul class="bullet">
-          <li>가로폭 1200px 내외 권장, <em>alt</em> 텍스트/캡션으로 맥락 설명</li>
-          <li>용량 큰 이미지는 80~85% 품질로 압축</li>
+          <li>가로폭 1200px 내외 권장, 캡션에 과목/날짜/설명 추가.</li>
+          <li>이미지 설명이 평가 요소가 될 때는 출처를 꼭 적기.</li>
         </ul>
       </details>
-      <details class="accordion">
+
+      <details class="accordion" open>
         <summary>파일/임베드</summary>
         <ul class="bullet">
-          <li>문서는 PDF로 업로드, 큰 영상은 YouTube(미등록) 링크 임베드</li>
-          <li>표/데이터는 이미지 대신 문서 링크 제공</li>
+          <li>PDF로 저장해서 올리면 브라우저에서 보기 편해요.</li>
+          <li>영상은 YouTube “미등록”으로 올리고 링크만 임베드.</li>
         </ul>
       </details>
-      <details class="accordion">
+
+      <details class="accordion" open>
         <summary>테마/레이아웃</summary>
         <ul class="bullet">
-          <li>테마는 명도 대비가 좋은 기본형 추천</li>
-          <li>모바일 미리보기로 줄바꿈/겹침 확인</li>
+          <li>모바일 보기로 한 번 꼭 확인 → 줄바꿈/겹침 체크.</li>
+          <li>섹션마다 레이아웃을 다르게 하면 읽기 좋아요.</li>
         </ul>
       </details>
     </section>
@@ -199,7 +202,9 @@
         <li><strong>공유 설정</strong>에서 대상(교수자/그룹)과 기간(마감일 포함) 지정</li>
         <li><strong>미리보기</strong>로 평가자 관점 확인 → 로그아웃/다른 브라우저로 링크 점검</li>
       </ol>
-      <div class="callout info"><p><strong>TIP:</strong> 링크가 만료되지 않도록 기간을 과제 마감에 맞추세요.</p></div>
+      <div class="callout info">
+        <p><strong>TIP:</strong> 링크가 만료되지 않도록 기간을 과제 마감에 맞추세요.</p>
+      </div>
     </section>
 
     <!-- 6. 컬렉션 -->
@@ -227,17 +232,20 @@
     <!-- FAQ -->
     <section class="container section reveal" id="faq" aria-labelledby="faq-h">
       <h3 id="faq-h">FAQ</h3>
-      <details class="accordion">
+
+      <details class="accordion" open>
         <summary>평가자가 못 본대요</summary>
         <p>공유 대상·기간을 다시 설정하고 저장하세요. 로그아웃 상태에서 링크 테스트.</p>
       </details>
-      <details class="accordion">
+
+      <details class="accordion" open>
         <summary>용량이 부족해요</summary>
-        <p>영상은 YouTube(미등록)로 임베드, 문서는 PDF 최적화(압축) 후 업로드.</p>
+        <p>영상은 YouTube(미등록)로 임베드하고, 문서는 PDF로 압축해서 올리세요.</p>
       </details>
-      <details class="accordion">
+
+      <details class="accordion" open>
         <summary>모바일에서 깨져요</summary>
-        <p>이미지 폭 100%, 표는 PDF 링크로 대체. 테마/레이아웃을 단순화.</p>
+        <p>이미지 폭을 100%로 두고, 표는 이미지 대신 PDF 링크로 대체하세요.</p>
       </details>
     </section>
 
@@ -245,67 +253,67 @@
       <a class="btn" href="./about.html">교수자용 안내로 이동</a>
       <a class="btn outline" href="#top" id="toTop">맨 위로</a>
     </section>
-<!-- ✅ 라이트박스 요소 -->
-<div id="lightbox" class="lightbox" aria-hidden="true">
-  <button class="lb-prev" aria-label="이전">‹</button>
-  <img class="lb-img" src="" alt="확대 이미지">
-  <button class="lb-next" aria-label="다음">›</button>
-</div>
-<!-- ✅ 온보딩 모달 -->
-<div id="onboard" class="onboard" role="dialog" aria-modal="true" aria-labelledby="ob-title" aria-hidden="true">
-  <div class="ob-dialog">
-    <button class="ob-close" type="button" aria-label="닫기">×</button>
-    <h3 id="ob-title">처음이신가요?</h3>
-    <p class="ob-lead">Mahara 사용 순서를 따라가며 빠르게 시작해보세요.</p>
-    <ul class="ob-steps">
-      <li>1) 계정 만들기</li>
-      <li>2) 페이지 만들기</li>
-      <li>3) 블록 추가</li>
-      <li>4) 공유·제출</li>
-    </ul>
-    <div class="ob-actions">
-      <a class="btn" href="#start" id="obStart">시작하기</a>
-      <button class="btn outline" type="button" id="obLater">나중에</button>
-      <button class="btn outline" type="button" id="obNever">다시 보지 않기</button>
+
+    <!-- ✅ 라이트박스 요소 -->
+    <div id="lightbox" class="lightbox" aria-hidden="true">
+      <button class="lb-prev" aria-label="이전">‹</button>
+      <img class="lb-img" src="" alt="확대 이미지">
+      <button class="lb-next" aria-label="다음">›</button>
     </div>
-  </div>
-</div>
+
+    <!-- ✅ 온보딩 모달 -->
+    <div id="onboard" class="onboard" role="dialog" aria-modal="true" aria-labelledby="ob-title" aria-hidden="true">
+      <div class="ob-dialog">
+        <button class="ob-close" type="button" aria-label="닫기">×</button>
+        <h3 id="ob-title">처음이신가요?</h3>
+        <p class="ob-lead">Mahara 사용 순서를 따라가며 빠르게 시작해보세요.</p>
+        <ul class="ob-steps">
+          <li>1) 계정 만들기</li>
+          <li>2) 페이지 만들기</li>
+          <li>3) 블록 추가</li>
+          <li>4) 공유·제출</li>
+        </ul>
+        <div class="ob-actions">
+          <a class="btn" href="#start" id="obStart">시작하기</a>
+          <button class="btn outline" type="button" id="obLater">나중에</button>
+          <button class="btn outline" type="button" id="obNever">다시 보지 않기</button>
+        </div>
+      </div>
+    </div>
   </main>
 
   <!-- 푸터 -->
   <footer class="site-edge">
-<footer class="site-edge">
-  <!-- ✅ 여기부터 교체 -->
-  <div class="container site-footer">
-    <div class="footer-grid">
-      <section>
-        <h4>관련 링크</h4>
-        <ul>
-          <li><a href="./index.html#start">학생용 가이드(시작하기)</a></li>
-          <li><a href="./about.html">교수자용 안내</a></li>
-          <li><a href="./index.html#faq">FAQ</a></li>
-        </ul>
-      </section>
-      <section>
-        <h4>가이드</h4>
-        <ul>
-          <li><a href="./index.html#share">공유·제출 가이드</a></li>
-          <li><a href="./index.html#check">제출 전 체크리스트</a></li>
-        </ul>
-      </section>
-      <section>
-        <h4>문의</h4>
-        <ul>
-          <li><a href="mailto:225034@kosin.ac.kr">225034@kosin.ac.kr</a></li>
-          <li><a href="tel:051-990-6658">051-990-6658</a></li>
-        </ul>
-      </section>
+    <div class="container site-footer">
+      <div class="footer-grid">
+        <section>
+          <h4>관련 링크</h4>
+          <ul>
+            <li><a href="./index.html#start">학생용 가이드(시작하기)</a></li>
+            <li><a href="./about.html">교수자용 안내</a></li>
+            <li><a href="./index.html#faq">FAQ</a></li>
+          </ul>
+        </section>
+        <section>
+          <h4>가이드</h4>
+          <ul>
+            <li><a href="./index.html#share">공유·제출 가이드</a></li>
+            <li><a href="./index.html#check">제출 전 체크리스트</a></li>
+          </ul>
+        </section>
+        <section>
+          <h4>문의</h4>
+          <ul>
+            <li><a href="mailto:225034@kosin.ac.kr">225034@kosin.ac.kr</a></li>
+            <li><a href="tel:051-990-6658">051-990-6658</a></li>
+          </ul>
+        </section>
+      </div>
+      <div class="footer-note">
+        <small>© 2025 Kosin University · Mahara Manual</small>
+      </div>
     </div>
-    <div class="footer-note">
-      <small>© 2025 Kosin University · Mahara Manual</small>
-    </div>
-  </div>
- </footer>
+  </footer>
 
   <script src="./script.js"></script>
 </body>
